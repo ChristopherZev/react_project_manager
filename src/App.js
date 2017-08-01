@@ -5,6 +5,7 @@ import './App.css';
 
 class App extends Component {
   constructor(){
+    super();
     this.state = {
       projects:[
         {
@@ -25,10 +26,11 @@ class App extends Component {
 
 
   render() {
+    
     return (
       <div className="App">
         My App
-        <Projects />
+        <Projects projects={this.state.projects}/>
       </div>
     );
   }

@@ -1,12 +1,24 @@
 import React, { Component } from 'react';
+import Projectitem from './Projectitem';
 
 
 class Projects extends Component {
-  render() {
+	  render() {
+  	let projectitems;
+	if(this.props.projects){
+		projectitems = this.props.projects.map(project => {
+			//console.log(projects);
+			return (
+				<Projectitem key={project.title} project={project} />
+			);
+
+		});
+	}
     return (
-      <div className="App">
-        My Projects
-        {this.props.test}
+      <div className="Projects">
+        
+        {projectitems}
+
       </div>
     );
   }
